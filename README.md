@@ -41,7 +41,7 @@
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/pikydo" target="_blank">
+      <a href="https://github.com/pykido" target="_blank">
         태윤
       </a>
     </td>
