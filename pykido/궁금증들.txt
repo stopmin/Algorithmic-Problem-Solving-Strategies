@@ -1,0 +1,62 @@
+1. 파이썬에서 전역변수를 선언해줘야하는 경우..?
+(1)
+total = 5
+
+def add_to_n(n):
+  n = n + total
+  return n
+
+result = add_to_n(3)
+print(result)
+
+(2)
+total = 5
+
+def add_to_total(n):
+  global total
+  total = total + n
+  return total
+
+result = add_to_total(3)
+print(result)
+
+  1번 코드같은 경우 add_to_n 함수에서 global total과 같은 선언이 없어도 에러가 나지 않는 반면에 2번 코드의 add_to_total 함수에서 global total이라는 선언이 없으면 
+에러가 나는 이유가 1번 코드같은 경우는 전역변수인 total의 값을 바꾸지 않고 참고하여 더해주는 과정만 하는 반면에 2번 코드의 total은 함수에서 전역변수인 total의 값을 
+바꾸려고 했기에 에러가 났다. 
+  참고자료 : https://stackoverflow.com/questions/423379/using-global-variables-in-a-function
+  
+2. 백트래킹
+
+3. 빠르게 간편하게 입력 받기
+import sys # 더욱 빠르게 입력 가능
+
+# map함수를 통해 입력되는 값에 int 부여 가능
+# sys.stdin.readline().rstrip()이 input()보다 훨씬 빠르다. 그냥 외우자. 
+n, m = map(int, sys.stdin.readline().rstrip().split())
+
+# 리스트 안에 여러 값을 입력 받을 때
+# (1) 원래 난 이렇게 했었음
+num_lst1 = [0] * n
+for i in range(n) : 
+  num_lst1[i] = int(sys.stdin.readline().rstrip())
+# (3) 이게 더욱 간편하고 좋다.
+num_lst2 = [int(sys.stdin.readline().rstrip()) for _ in range(n)]
+
+
+
+4. 얕은 복사와 깊은 복사 
+- mutable한 객체에 얕은 복사를 하면 서로 같은 메모리 주소값을 가르킨다. 
+- 반면 immutable한 객체에 얕은 복사를 하면 서로 다른 메모리 주소값을 가르킨다. 
+- 따라서 파이썬에서 깊은 복사를 하기 위해서는 다음의 과정을 거쳐야한다.
+import copy
+num_lst = [1,2,3]
+new_num_lst = copy.deepcopy(num_lst)
+
+
+5. 부분 주석
+window : ctrl + / 
+mac : command + / 
+
+
+
+
