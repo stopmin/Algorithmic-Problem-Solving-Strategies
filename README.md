@@ -1,9 +1,11 @@
 # 📖 알고리즘 뽀개기
 > 가치있는 해결 과정을 공유하고, 함께 성장한다.
 
-- 종만북(알고리즘 해결 전략 1권, 2권)을 각자 학습하며 자신의 속도에 맞추어 필요시 본인 블로그에 정리
+- 종만북(알고리즘 해결 전략 1권, 2권)을 각자 학습하며 자신의 속도에 맞추어 필요시 본인 블로그에 정리✏
 - 알고리즘 문제를 해결
-- 주 1회 스터디 시간에 **페어 프로그래밍** 
+- 주 1회 스터디 시간에 **페어 프로그래밍**
+- [issue](https://github.com/stopmin/Algorithmic-Problem-Solving-Strategies/issues): 문제 추천 및 함께 풀어보고싶은 문제 게시
+- [discussion](https://github.com/stopmin/Algorithmic-Problem-Solving-Strategies/discussions): 적극적으로 정리(블로그 링크) 및 함께 나눌 이야기 남기기
 
 ### 👀 규칙
 **문제풀이에 대한 규칙**
