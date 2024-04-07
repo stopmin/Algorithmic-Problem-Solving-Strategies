@@ -5,7 +5,7 @@
 using namespace std;
 
 queue<int> floors;
-vector<bool> visited(MAXFLOOR,false );
+bool visited[MAXFLOOR];
 
 int main() {
     FASTIO;
