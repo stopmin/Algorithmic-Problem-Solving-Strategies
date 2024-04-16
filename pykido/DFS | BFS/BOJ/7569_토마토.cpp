@@ -16,6 +16,7 @@ struct coordinate {
     int z;
 };
 
+
 int M, N, H, tomato; // M : 가로 칸 수, N : 세로 칸 수, H : 상자의 높이, tomato : 토마토 개별 정보
 int tomato_box[101][101][101]; // 입력 받을 배열 설정
 int visited[101][101][101] = {}; // 전부 0으로 초기화
