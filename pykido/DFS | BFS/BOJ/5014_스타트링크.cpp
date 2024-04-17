@@ -13,7 +13,6 @@ int bfs() {
 
     while (!q.empty()) {
         int now = q.front(); // 현재 층
-        cout << "now : " << now << endl;
         q.pop(); // front 삭제
         if (now == G) return visited[G]; // 도달했다면
 
