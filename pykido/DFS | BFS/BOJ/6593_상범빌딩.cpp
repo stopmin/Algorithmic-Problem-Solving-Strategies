@@ -3,7 +3,8 @@
 //
 // 1. 7569 토마토 문제와 매우 비슷한듯?
 // 2. 무한 루프를 통해 0 0 0이 입력될 때까지 입력 받자! (무한 루프를 통해 여러 테스트케이스를 거치기에 초기화과정을 필수다!)
-// 3.
+// 3. 시작 지점부터 6방향을 탐색하며 아직 방문하지 않았고 막힌 곳(#)이 아니라면 이동하기
+// 4. 계속 이동하다가 도착 지점(E)을 만나면 이동시간 반환하기
 
 #include <iostream>
 #include <queue>
@@ -35,7 +36,7 @@ int bfs() {
         int cur_c = q.front().cols;
         q.pop();
 
-        // 도착 지점이라면 반환하기
+        // 도착 지점이라면 이동시간 반환하기
         if (building[cur_h][cur_r][cur_c] == 'E') return visited[cur_h][cur_r][cur_c];
 
         // 6방향 탐색
@@ -51,7 +52,7 @@ int bfs() {
             if (visited[next_h][next_r][next_c] == 0 && building[next_h][next_r][next_c] != '#') {
                 coordinate next_coordinate = {next_h,next_r,next_c};
                 q.push(next_coordinate);
-                visited[next_h][next_r][next_c] = visited[cur_h][cur_r][cur_c] + 1;
+                visited[next_h][next_r][next_c] = visited[cur_h][cur_r][cur_c] + 1; // 이동 시간 + 1
             }
         }
     }
