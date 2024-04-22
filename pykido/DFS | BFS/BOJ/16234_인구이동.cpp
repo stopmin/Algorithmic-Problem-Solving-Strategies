@@ -39,7 +39,7 @@ void bfs() {
         totalP += population_map[cur_row][cur_col];
         totalN += 1;    // 연합 수 + 1
         // 현재 i행 j열 인구 수
-        int cur_pos = population_map[cur_row][cur_col];
+        int cur_population = population_map[cur_row][cur_col];
         // 방문처리해주기
         visited[cur_row][cur_col] = true;
         q.pop();
@@ -48,14 +48,14 @@ void bfs() {
         for (int i = 0; i < 4; i++) {
             int next_r = cur_row + dr[i];
             int next_c = cur_col + dc[i];
-            int next_pos = population_map[next_r][next_c];
+            int next_population = population_map[next_r][next_c];
 
             // 범위 벗어나면 continue
             if (next_r < 0 || next_r >= N || next_c < 0 || next_c >= N) continue;
 
             // 국경선 열 수 있나??
-            if (abs(cur_pos - next_pos) >= L && abs(cur_pos - next_pos) <= R && !visited[next_r][next_c]) {
-                flag = 1;
+            if (abs(cur_population - next_population) >= L && abs(cur_population - next_population) <= R && !visited[next_r][next_c]) {
+                flag = 1;   // 연합국 찾음!!
                 visited[next_r][next_c] = true;
                 q.push(make_pair(next_r,next_c));
             }
@@ -85,7 +85,7 @@ int main() {
     }
 
     // 구현
-    int result = 0;
+    int result_days = 0;
     while(true) {
         // 방문배열 초기화시키기
         for (int i = 0; i < N; i++) {
@@ -104,14 +104,14 @@ int main() {
             }
         }
 
-        if (flag == 0) {
+        if (flag == 0) {    // 더 이상 연합국 못 찾음
             break;
-        } else {
-            result += 1;
+        } else {            // 연합 찾았고 가능성 있음
+            result_days += 1;
         }
     }
 
-    cout << result;
+    cout << result_days;
 
     return 0;
 }
