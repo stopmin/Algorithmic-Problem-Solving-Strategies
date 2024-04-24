@@ -47,6 +47,8 @@ void bfs() {
         } else if (!first_visit && cur_position == K && cur_time < result) { // 첫 방문 아닌데 시간 더 적게 나온다면??
             result = cur_time; // 최소 시간 갱신
         } else if (cur_time > result) continue; // 불필요한 탐색은 그만
+        // 숨바꼭질_2랑 다른 점임!! 왜냐하면 숨바꼭질_2는 cur_position == K인 시점에서의 동생을 찾는 가장 빠른 시간이 전부 동일하지만
+        // 숨바꼭질_3는 서로 다르기에 cur_position == K를 만족한 시점 이후 더 빠른 시간이 존재하지만 앞에서 break하면 그 가장 빠른 시간을 못 찾음
 
         int minusPosition = cur_position - 1;
         int plusPosition = cur_position + 1;
