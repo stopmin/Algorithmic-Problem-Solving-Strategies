@@ -72,4 +72,3 @@ int main() {
     cout << W_power << " " << B_power;
 
     return 0;
-}
