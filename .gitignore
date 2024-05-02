@@ -6,3 +6,6 @@
 ._.DS_Store
 **/.DS_Store
 **/._.DS_Store
+
+.cmake-build-debug/
+CMakeLists.txt
