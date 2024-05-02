@@ -7,5 +7,6 @@
 **/.DS_Store
 **/._.DS_Store
 
-.cmake-build-debug/
-CMakeLists.txt
+.cmake-build-debug
+**/cmake-build-debug/
+
