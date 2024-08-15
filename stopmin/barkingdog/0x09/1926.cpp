@@ -3,7 +3,8 @@
 //
 
 #include <bits/stdc++.h>
-
+#define X first
+#define Y second
 using namespace std;
 
 int main(void) {
@@ -32,25 +33,20 @@ int main(void) {
             q.push(make_pair(i, j));
             int temp_s = 0;
             while (!q.empty()) {
-                pair<int, int> front = q.front();
-                temp_s++; // 넓이 쁠쁠
-                pic[front.first][front.second] = 0;
+                pair<int, int> front = q.front(); q.pop();
+                temp_s++;
+                pic[front.X][front.Y] = 0;
                 for (int d = 0; d < 4; d++) {
-                    int x = front.first + dx[d];
-                    int y = front.second + dy[d];
-                    if (0 > x || 0 > y || x >= n || y >= m) {
-                        continue;
-                    }
-                    else if (pic[x][y] == 1) {
-                        q.push(make_pair(x, y));
-                        pic[x][y] = 0;
-                    }
+                    int x = front.X + dx[d];
+                    int y = front.Y + dy[d];
+                    if (0 > x || 0 > y || x >= n || y >= m) continue;
+                    else if (pic[x][y] != 1) continue;
+                    q.push(make_pair(x, y));
+                    pic[x][y] = 0;
                 }
-                q.pop();
             }
-            if (temp_s > s) s = temp_s;
+            s = max(s, temp_s);
         }
     }
-
     cout << cnt << "\n" << s << endl;
 }
