@@ -6,21 +6,16 @@
 
 using namespace std;
 int N, S;
-int ans;
-bool isused[21];
-int arr[21];
+int ans = 0;
+int arr[30];
 
-void func(int cur, int depth, int idx) {
-    if (cur == S && depth != 0) ans++;
-    for (int i = idx; i < N; i++) {
-        if (!isused[i]) {
-            isused[i] = true;
-            depth++;
-            func(cur + arr[i], depth, i);
-            depth--;
-            isused[i] = false;
-        }
+void func(int cur, int tot) {
+    if (cur == N ) {
+        if(tot==S) ans++;
+        return;
     }
+    func(cur+1, tot);
+    func(cur+1, tot+arr[cur]);
 }
 
 int main(void) {
@@ -31,6 +26,7 @@ int main(void) {
     for (int i = 0; i < N; i++)
         cin >> arr[i];
 
-    func(0, 0, 0);
+    func(0, 0);
+    if(S==0) ans--;
     cout << ans;
 }
