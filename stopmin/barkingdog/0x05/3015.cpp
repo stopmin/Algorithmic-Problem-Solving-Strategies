@@ -31,7 +31,7 @@ int main(void) {
                 int cur = s.top().second;
                 s.pop();
 
-                if(!s.empty()) ans++; // 안비었을경우 1회 추가.
+                if(!s.empty()) ans++; // 남아있는 사람이 있는 경우 더 큰 키의 사람과 마주볼 수 있는 쌍은 오직 한 번만 발생하기 때문이다.
                 ans += cur;
 
                 s.push({height, cur + 1});
